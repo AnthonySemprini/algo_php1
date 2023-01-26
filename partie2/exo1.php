@@ -23,7 +23,7 @@
 
     $texte = "mon texte en pararmetre";
     $texte = strtoupper($texte);
-    echo $texte;
+   // echo $texte;
     
 
     function ConvertirMajRouge(string $texteRed){

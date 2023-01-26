@@ -20,13 +20,24 @@ Vous devrez appeler la fonction comme suit : afficherTableHTML($capitales);</p>
 <h2>Résultat</h2>
 
 <?php
-$capitales = array
-("France"=>"Paris","Allemagne"=>"Berlin","USA"=>"Washington","Italie"=>"Rome");
+$capitales =[
+     "France"=>"Paris",
+     "Allemagne"=>"Berlin",
+     "USA"=>"Washington",
+     "Italie"=>"Rome"
+ ];
 
 foreach (
     $capitales as $key => $value){
+        $key =strtoupper($key);
         echo "$key => $value<br>";
     }
+
+    
+   
+
+   // afficherTableHTML($capitales){
+   // }; 
 ?>
 
 </body>
