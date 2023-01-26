@@ -18,18 +18,18 @@ afficherInput($nomsInput);
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <label for="fname">Nom</label><br>
-        <input type="text" id="fname"><br>
+    <!-- <form>
+        <label for="Nom">Nom</label><br>
+        <input type="text" id="Nom"><br>
         
-        <label for="lname">Prenom</label><br>
-        <input type="text" id="lname"><br>
+        <label for="Prenom">Prenom</label><br>
+        <input type="text" id="Prenom"><br>
 
-        <label for="city">Ville</label><br>
-        <input type="text" id="city"><br>
-    </form>
+        <label for="Ville">Ville</label><br>
+        <input type="text" id="Ville"><br>
+    </form> -->
 
-
+<!-- "control" + ":" = raccourcie com -->
 
 
 </body>
@@ -39,6 +39,7 @@ afficherInput($nomsInput);
 
 $nomsInput = ["Nom","Prenom","Ville"];
 
-echo "<form> 
-        
-
+foreach ($nomsInput as $info ){
+    echo  "<label for='$info'>$info</label><br>
+    <input type='text' id='$info'><br>";
+}
