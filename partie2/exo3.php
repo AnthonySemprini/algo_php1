@@ -7,5 +7,6 @@ dans un nouvel onglet (_blank)
 
 <?php
 //Lien hypertexte PHP
+
 echo '<a href="https://elan-formation.eu/accueil">ElanFormation</a>';
  

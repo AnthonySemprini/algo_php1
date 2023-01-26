@@ -27,13 +27,19 @@ $capitales =[
      "USA"=>"Washington",
      "Italie"=>"Rome"
  ];
+
+
  
+
 //corp tableau
 foreach ($capitales as $key => $value){
         $key =strtoupper($key);
+       
        echo  "<tr>" ,
         "<td>$key</td>",
         "<td>$value</td>",
+        "<td><a href='https://fr.wikipedia.org/wiki/$value'>Lien</a></td>",
         "</tr>";
     }
     echo "</table>";
+   
