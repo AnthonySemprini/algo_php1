@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exercice2</title>
-</head>
-<body>
     <h1>Exercice2</h1>
 
     <p>Soit le tableau suivant :
@@ -19,26 +10,56 @@ Vous devrez appeler la fonction comme suit : afficherTableHTML($capitales);</p>
  
 <h2>Résultat</h2>
 
+
+
+<!--tableau html
+    
+<table>
+    <tr>
+        <th>Pays</th>
+        <th>Capitale</th>
+    </tr>
+    <tr>
+        <td>France</td>
+        <td>Paris</td>
+    </tr>
+    <tr>
+        <td>Allemagne</td>
+        <td>Berlin</td>
+    </tr>
+    <tr>
+        <td>USA</td>
+        <td>Washington</td>
+    </tr>
+    <tr>
+        <td>Italie</td>
+        <td>Milan</td>
+    </tr>
+</table> -->
+
+
 <?php
+
+// entete tableau
+echo "<table>
+<tr>
+    <th>Pays</th>
+    <th>Capitale</th>
+</tr>";
+
 $capitales =[
      "France"=>"Paris",
      "Allemagne"=>"Berlin",
      "USA"=>"Washington",
      "Italie"=>"Rome"
  ];
-
-foreach (
-    $capitales as $key => $value){
+ 
+//corp tableau
+foreach ($capitales as $key => $value){
         $key =strtoupper($key);
-        echo "$key => $value<br>";
+       echo  "<tr>" ,
+        "<td>$key</td>",
+        "<td>$value</td>",
+        "</tr>";
     }
-
-    
-   
-
-   // afficherTableHTML($capitales){
-   // }; 
-?>
-
-</body>
-</html>
+    echo "</table>";
