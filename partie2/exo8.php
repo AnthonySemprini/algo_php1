@@ -9,3 +9,14 @@ repeterImage($url,4);</p>
 
 <?php
 
+
+$image = ("http://my.mobirise.com/data/userpic/764.jpg");
+
+echo str_repeat($image,3);
+
+$imageMulti = 3;
+
+repeterImage ($image * $imageMulti = $result){
+    echo "$result";
+
+};
