@@ -12,5 +12,6 @@ chaîne de caractère représentant une date.</p>
 
 $date= "23-03-2018";
   echo date('l,F,o',strtotime($date));
+  
 
   
