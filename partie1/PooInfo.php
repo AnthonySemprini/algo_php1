@@ -28,8 +28,10 @@ class Ordinateur//class
  {
     $this->setStatus(1);
  }
-}$poste = new Ordinateur("Samsung");
+}
+$poste = new Ordinateur("Samsung");
 // echo $poste->getMarque();
 $poste->setMarque("Apple");
-echo $poste->getStatus();$poste->changeStatus();
+echo $poste->getStatus();
+$poste->changeStatus();
 echo "<br>". $poste->getStatus();
