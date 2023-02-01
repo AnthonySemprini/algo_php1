@@ -16,7 +16,7 @@ $array_of_bill = [20,10,5,2,1];
 
 $array_of_bill = [20,10,5,2,1];
 foreach ($array_of_bill as $billet ){
-    echo "billet ".$billet." : ". intdiv( $rendu , $billet)."<br>";
+    echo "billet".$billet." : ". intdiv( $rendu , $billet)."<br>";
     $rendue = $rendu%$billet;
 }
 
