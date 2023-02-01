@@ -13,8 +13,18 @@ class personne
 {
     private $Nom;
     private $Prenom;
-    private $Age;
-    
+    private $DateBirth;
+    public function __construct($Nom,$Prenom,$DAteBirth)
+    {
+       $this->Nom = $Nom;
+       $this->Prenom = $Prenom;
+       $this->DateBirth = new datetime ($DAteBirth);//datetime converti la date en age    
+    }
+    public function __toString()
+    {
+        return "NOM : ".$this->Nom. 
+        " PRENOM : ".$this->Prenom;
+    }
   public function getNom()
     {
         return $this->Nom;
@@ -27,17 +37,17 @@ class personne
     {
         return $this->Prenom;
     }
-public function setNom($newPrenom)
+public function setPrenom($newPrenom)
     {
     $this->Prenom = $newPrenom;
     }
  public function getAge()
     {
-        return $this->Age;
+        return $this->DateBirth;
     }
- public function setAge($newAge)
+ public function setDateBirth($newDateBirth)
     {
-    $this->Age = $newAge;
+    $this->DateBirth = $newDateBirth;
     }
 }
 $p1 = new Personne("DUPONT", "Michel", "1980-02-19") ;
@@ -45,4 +55,4 @@ $p1 = new Personne("DUPONT", "Michel", "1980-02-19") ;
 $p2 = new Personne("DUCHEMIN", "Alice", "1985-01-17");
 
 
-echo $p1->getNOM();
+echo $p1;

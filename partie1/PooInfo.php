@@ -5,7 +5,7 @@ class Ordinateur//class
  private $_status;
  public function __construct($marque)
  {
-    $this->_marque = $marque;
+    $this->_marque = $marque;//construct sert
     $this->_status = 0;
  }
  public function getMarque()
