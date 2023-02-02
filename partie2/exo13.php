@@ -17,10 +17,10 @@ suivants :</p>
 
 class Voiture 
 {
-    public $marques='';
-    public $modele='';
-    public $nbPortes='';
-    public $vitesseActuel='';
+    public $marques;
+    public $modele;
+    public $nbPortes;
+    public $vitesseActuel;
 
     public function demarrer(){
                             ;

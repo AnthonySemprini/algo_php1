@@ -10,8 +10,18 @@ chaîne de caractère représentant une date.</p>
 //$jour = [ "lundi","mardi","mercerdi","jeudi","vendredi","samedi","dimanche"];
 //$moi = ["janvier","fevrier","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","decembre"];
 
-$date= "23-03-2018";
-  echo date('l,F,o',strtotime($date));
-  
+//$date= "23-03-2018";
+  //echo date('l,F,o',strtotime($date));
 
-  
+  $fmt = new IntlDateFormatter(
+    "fr_FR",
+    IntlDateFormatter::FULL,
+    IntlDateFormatter::NONE,
+    'Etc/UTC',
+    IntlDateFormatter::GREGORIAN,
+    'EEEE, dd MMMM  y'
+  );
+
+  $date = new DateTime('2018-02-23');
+
+  echo $fmt->format($date);
