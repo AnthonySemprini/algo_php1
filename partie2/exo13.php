@@ -1,6 +1,6 @@
 <H1>Exercice13</H1>
 
-<p>Créer une classe Voiture possédant les propriétés suivantes : marque, modèle, nbPortes et
+<p>Créer une classe Voiture possédant les propriétés suivantes : marque, modèle, nbPorte et
 vitesseActuelle ainsi que les méthodes demarrer( ), accelerer( ) et stopper( ) en plus
 des accesseurs (get) et mutateurs (set) traditionnels. La vitesse initiale de chaque véhicule
 instancié est de 0. Une méthode personnalisée pourra afficher toutes les informations d'un
@@ -17,25 +17,33 @@ suivants :</p>
 
 class Voiture 
 {
-    public $marques;
-    public $modele;
-    public $nbPortes;
-    public $vitesseActuel;
-    public function __construct($marques,$modele,$nbPortes,$vitesseActuel)
+
+    // parameters 
+    public string $marque;
+    public string $modele;
+    public int $nbPorte;
+    public int $vitesseActuel;
+    public string $status;
+    
+
+    // constructeur
+    public function __construct(string $marque, string $modele, int $nbPorte)
     {
-       $this->marques = $marques;
+       $this->marque = $marque;
        $this->modele = $modele;
-       $this->nbPortes = $nbPortes;
-       $this->vitesseActuel = $vitesseActuel; 
+       $this->nbPorte = $nbPorte;
+       $this->vitesseActuel = 0;
+       $this->status = " a l'arret"; 
     }
 
+    //setter and getter
     public function getMarques()
     {
-        return $this->marques;
+        return $this->marque;
     }
-    public function setMarques($newMarques)
+    public function setMarques($newMarque)
     {
-        $this->marques = $newMarques;
+        $this->marque = $newMarque;
     }
 
     public function getmodele()
@@ -47,13 +55,13 @@ class Voiture
         $this->modele = $newmodele;
     }
 
-    public function getnbPortes()
+    public function getnbPorte()
     {
-        return $this->nbPortes;
+        return $this->nbPorte;
     }
-    public function setnbPortes($newnbPortes)
+    public function setnbPorte($newnbPorte)
     {
-        $this->nbPortes = $newnbPortes;
+        $this->nbPorte = $newnbPorte;
     }
 
     public function getvitesseActuel()
@@ -65,25 +73,52 @@ class Voiture
         $this->vitesseActuel = $newvitesseActuel;
     }
 
+    // method
+    public function demarrer() {
+
+        if ($this->status == "on") {
+            echo "la voiture ".$this->marque." ".$this->modele." est déjà allumée<br>";
+        }else{
+            $this->status = "on";
+            echo "la voiture".$this->marque." ".$this->modele." a démarré<br>";
+        }
+    }
     
+    public function accelerer(int $acceleration){
+        $this->vitesseActuel += $acceleration ;
+         echo "la voiture ".$this->marque." ".$this->modele." roule a ".$this->vitesseActuel."<br>";
+    }
+    public function freiner(int $freinage){
+        $this->vitesseActuel -= $freinage ;
+        echo  "la voiture ".$this->marque." ".$this->modele." roule a ".$this->vitesseActuel."<br>";
+    }
+    
+    public function stopper(){
+        if ($this->status == " a l'arret"){
+            echo "la voiture ".$this->marque." ".$this->modele." est ".$this->status;
+        }else {
+            $this->status = " a l'arret";
+            $this->vitesseActuel = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-                    
-
+            echo "la voiture".$this->marque." ".$this->modele." est ".$this->status."avec une vitesse de ".$this->vitesseActuel."<br>";
+        }
+    }  
+    
+    // magic method toString, moyen d'afficher facilement une instance d'un objet
+    public function __toString()
+    {
+        return $this->marque." ".$this->modele." est ".$this->status."<br>" ;
+    } 
 }
+
+$v1 = new Voiture("Peugeot", "408",5);
+
+$v2 = new Voiture("renault","modus",5);
+
+
+$v1->demarrer();
+$v1->accelerer(15);
+$v1->accelerer(50);
+$v1->freiner(65);
+$v1->stopper();
+
