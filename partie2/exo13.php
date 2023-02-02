@@ -21,6 +21,13 @@ class Voiture
     public $modele;
     public $nbPortes;
     public $vitesseActuel;
+    public function __construct($marques,$modele,$nbPortes,$vitesseActuel)
+    {
+       $this->marques = $marques;
+       $this->modele = $modele;
+       $this->nbPortes = $nbPortes;
+       $this->vitesseActuel = $vitesseActuel; 
+    }
 
     public function getMarques()
     {
