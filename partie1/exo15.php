@@ -9,50 +9,68 @@ $p2 = new Personne("DUCHEMIN", "Alice", "1985-01-17") ;</p>
 
 <?php
 
-class personne
+class Personne
 {
-    private $Nom;
-    private $Prenom;
-    private $DateBirth;
-    public function __construct($Nom,$Prenom,$DAteBirth)
+    private $nom;
+    private $prenom;
+    private $dateBirth;
+    public function __construct($nom,$prenom,$dateBirth)
     {
-       $this->Nom = $Nom;
-       $this->Prenom = $Prenom;
-       $this->DateBirth = new datetime ($DAteBirth);//datetime converti la date en age    
+       $this->nom = $nom;
+       $this->prenom = $prenom;
+       $this->dateBirth = new datetime ($dateBirth);//datetime converti la date en age    
     }
-    public function __toString()
+    public function getNom()
     {
-        return "NOM : ".$this->Nom. 
-        " PRENOM : ".$this->Prenom;
+        return $this->nom;
     }
-  public function getNom()
+    public function setNom($newNom)
     {
-        return $this->Nom;
+        $this->nom = $newNom;
     }
- public function setNom($newNom)
+    public function getPrenom()
     {
-    $this->Nom = $newNom;
+        return $this->prenom;
     }
- public function getPrenom()
+    public function setPrenom($newPrenom)
     {
-        return $this->Prenom;
+        $this->prenom = $newPrenom;
     }
-public function setPrenom($newPrenom)
+    public function getAge()
     {
-    $this->Prenom = $newPrenom;
+        return $this->dateBirth;
     }
- public function getAge()
+    public function setDateBirth($newDateBirth)
     {
-        return $this->DateBirth;
+        $this->dateBirth = $newDateBirth;
     }
- public function setDateBirth($newDateBirth)
+
+    public function ageReel() { //pour calcul l'age
+        $currentDate= new DateTime();
+        $result = $this->dateBirth->diff($currentDate);
+        return $result->format ('%Y ans');
+    }
+
+    public function __toString() // pour afficher
     {
-    $this->DateBirth = $newDateBirth;
+        return "NOM : ".$this->nom."<br>".
+        " PRENOM : ".$this->prenom."<br>".
+        "Age : ".$this->ageReel();
     }
+
 }
 $p1 = new Personne("DUPONT", "Michel", "1980-02-19") ;
 
-$p2 = new Personne("DUCHEMIN", "Alice", "1985-01-17");
+$p2 = new Personne("DUCHEMIN", "Alice", "1995-01-17");
 
 
-echo $p1;
+
+echo $p2;
+
+//Acces Modifiers
+
+//public- la propriété ou la méthode est accessible de partout. C'est par défaut
+
+//protected- la propriété ou la méthode est accessible au sein de la classe et par les classes dérivées de cette classe
+
+//private- la propriété ou la méthode est UNIQUEMENT accessible au sein de la classe

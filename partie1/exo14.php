@@ -7,7 +7,8 @@
 <?php
 
 
-$birthDate = new DateTime ("1985-01-17");$currentDate= new DateTime();
+$birthDate = new DateTime ("1985-01-17");
+$currentDate= new DateTime();
 
 $result = $birthDate->diff($currentDate);
 echo $result->format ('%Y ans');
