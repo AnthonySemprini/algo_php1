@@ -16,12 +16,14 @@
     $v2 = new Voiture("renault","modus",5);
     
     
-    $v1->demarrer();
+   /* $v1->demarrer();
     $v1->accelerer(15);
     $v1->accelerer(50);
     $v1->freiner(65);
     $v1->stopper();
+    //$v1->getinfos();*/
 
+    $v1->getInfos();
 
     ?>
     

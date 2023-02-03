@@ -7,7 +7,7 @@ class VoitureElec extends Voiture{//lie 2 fichier
     public function __construct(string $marque, string $modele, int $nbPorte, int $autonomie)
     {
         parent::__construct($marque, $modele, $nbPorte);
-        $this->autonomie = 650;
+        $this->autonomie = $autonomie;
     }
     public function getautonomie()
     {
@@ -18,3 +18,8 @@ class VoitureElec extends Voiture{//lie 2 fichier
         $this->autonomie = $newautonomie;
     }
 }
+$v1elec = new VoitureElec ("tesla","modelS",5,650);
+
+echo $v1elec;
+
+

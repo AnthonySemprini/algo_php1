@@ -1,7 +1,6 @@
 <?php
 
-class Voiture 
-{
+class Voiture {
 
     // parameters 
     public string $marque;
@@ -9,24 +8,24 @@ class Voiture
     public int $nbPorte;
     public int $vitesseActuel;
     public string $status;
-    
+
 
     // constructeur
     public function __construct(string $marque, string $modele, int $nbPorte)
     {
-       $this->marque = $marque;
-       $this->modele = $modele;
-       $this->nbPorte = $nbPorte;
-       $this->vitesseActuel = 0;
-       $this->status = " a l'arret"; 
+        $this->marque = $marque;
+        $this->modele = $modele;
+        $this->nbPorte = $nbPorte;
+        $this->vitesseActuel = 0;
+        $this->status = " a l'arret";
     }
 
     //setter and getter
-    public function getMarques()
+    public function getMarque()
     {
         return $this->marque;
     }
-    public function setMarques($newMarque)
+    public function setMarque($newMarque)
     {
         $this->marque = $newMarque;
     }
@@ -59,39 +58,56 @@ class Voiture
     }
 
     // method
-    public function demarrer() {
+    public function demarrer()
+    {
 
         if ($this->status == "on") {
-            echo "la voiture ".$this->marque." ".$this->modele." est déjà allumée<br>";
-        }else{
+            echo "la voiture " . $this->marque . " " . $this->modele . " est déjà allumée<br>";
+        } else {
             $this->status = "on";
-            echo "la voiture".$this->marque." ".$this->modele." a démarré<br>";
+            echo "la voiture" . $this->marque . " " . $this->modele . " a démarré<br>";
         }
     }
-    
-    public function accelerer(int $acceleration){
-        $this->vitesseActuel += $acceleration ;
-         echo "la voiture ".$this->marque." ".$this->modele." roule a ".$this->vitesseActuel."<br>";
+
+    public function accelerer(int $acceleration)
+    {
+        $this->vitesseActuel += $acceleration;
+        echo "la voiture " . $this->marque . " " . $this->modele . " roule a " . $this->vitesseActuel . "<br>";
     }
-    public function freiner(int $freinage){
-        $this->vitesseActuel -= $freinage ;
-        echo  "la voiture ".$this->marque." ".$this->modele." roule a ".$this->vitesseActuel."<br>";
+    public function freiner(int $freinage)
+    {
+        $this->vitesseActuel -= $freinage;
+        echo  "la voiture " . $this->marque . " " . $this->modele . " roule a " . $this->vitesseActuel . "<br>";
     }
-    
-    public function stopper(){
-        if ($this->status == " a l'arret"){
-            echo "la voiture ".$this->marque." ".$this->modele." est ".$this->status;
-        }else {
+
+    public function stopper()
+    {
+        if ($this->status == " a l'arret") {
+            return "la voiture " . $this->marque . " " . $this->modele . " est " . $this->status;
+        } else {
             $this->status = " a l'arret";
             $this->vitesseActuel = 0;
 
-            echo "la voiture".$this->marque." ".$this->modele." est ".$this->status."avec une vitesse de ".$this->vitesseActuel."<br>";
+            return "la voiture" . $this->marque . " " . $this->modele . " est " . $this->status . "avec une vitesse de " . $this->vitesseActuel . "<br>";
         }
-    }  
-    
+    }
+    public function getInfos()
+    {
+        echo  "marque : " . $this->marque.
+                "modele : " . $this->modele . "<br>".
+                " Nombre de portes : " . $this->nbPorte . "<br>".
+                "Sa vitesse actuelle est de : " . $this->vitesseActuel . " km/h<br>";
+    }
+
     // magic method toString, moyen d'afficher facilement une instance d'un objet
     public function __toString()
     {
-        return $this->marque." ".$this->modele." est ".$this->status."<br>" ;
-    } 
+        return $this->marque . " " . $this->modele . " est " . $this->status . "<br>";
+    }
 }
+
+//$v1 = new Voiture("Peugeot", "408",5);
+
+//$v2 = new Voiture("renault","modus",5);
+
+        // $v1->getInfos();
