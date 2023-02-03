@@ -25,6 +25,10 @@
     $texte = strtoupper($texte);
    // echo $texte;
     
+/**
+ * ConvertirMajRouge(string $texteRed)
+ * change couleur txt en rouge
+ */
 
     function ConvertirMajRouge(string $texteRed){
           
