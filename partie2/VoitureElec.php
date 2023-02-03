@@ -1,9 +1,8 @@
 <?php
-require "Voiture.php";
 class VoitureElec extends Voiture{//lie 2 fichier
-  
+    
     public int $autonomie;
-
+    
     public function __construct(string $marque, string $modele, int $nbPorte, int $autonomie)
     {
         parent::__construct($marque, $modele, $nbPorte);
@@ -18,8 +17,10 @@ class VoitureElec extends Voiture{//lie 2 fichier
         $this->autonomie = $newautonomie;
     }
 }
-$v1elec = new VoitureElec ("tesla","modelS",5,650);
+//require "Voiture.php"; appel la page lier avec extends
 
-echo $v1elec;
+//$v1elec = new VoitureElec ("tesla","modelS",5,650);
+
+//echo $v1elec;
 
 

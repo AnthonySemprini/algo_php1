@@ -93,7 +93,7 @@ class Voiture {
     }
     public function getInfos()
     {
-        echo  "marque : " . $this->marque.
+        echo  "marque : " . $this->marque. "<br>".
                 "modele : " . $this->modele . "<br>".
                 " Nombre de portes : " . $this->nbPorte . "<br>".
                 "Sa vitesse actuelle est de : " . $this->vitesseActuel . " km/h<br>";
