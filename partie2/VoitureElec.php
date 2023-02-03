@@ -1,5 +1,5 @@
 <?php
-
+require "Voiture.php";
 class VoitureElec extends Voiture{//lie 2 fichier
   
     public int $autonomie;
