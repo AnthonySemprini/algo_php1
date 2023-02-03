@@ -19,4 +19,5 @@ L’adresse contact@elan est une adresse e-mail invalide</p>
     echo "L'adresse e-mail n'est pas valide";
   }
 ?>
+// filter_var — Filtre une variable avec un filtre spécifique
 // FILTER_VALIDATE_EMAIL defini si email valide ou non
