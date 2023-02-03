@@ -12,10 +12,17 @@ class VoitureElec extends Voiture{//lie 2 fichier
     {
         return $this->autonomie;
     }
-    public function setautonomie($newautonomie)
+
+    public function setautonomie($autonomie)
     {
-        $this->autonomie = $newautonomie;
+        $this->autonomie = $autonomie;
+
+        return $this;
     }
+    public function getInfos() {
+        return parent::getInfos()."Autonomie : $this->autonomie km<br>";
+    }
+
 }
 //require "Voiture.php"; appel la page lier avec extends
 

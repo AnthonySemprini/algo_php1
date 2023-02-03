@@ -23,11 +23,11 @@
     
     $v1elec = new VoitureElec ("tesla","modelS",5,650);
     
-  $v1->demarrer();
+  /*$v1->demarrer();
   $v1->accelerer(45);
   $v1->freiner(20);
   $v1->getInfos();
-  $v1elec->demarrer();
+  $v1elec->demarrer();*/
   $v1elec->getInfos();
   
     ?>
