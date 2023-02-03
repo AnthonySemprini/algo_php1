@@ -19,16 +19,17 @@
 
     $v1 = new Voiture("Peugeot", "408",5);
 
-    $v2 = new Voiture("renault","modus",5);
+    $v2 = new Voiture("Renault","Modus",5);
     
-    $v1elec = new VoitureElec ("tesla","modelS",5,650);
+    $v1elec = new VoitureElec ("Tesla","ModelS",5,650);
     
   /*$v1->demarrer();
   $v1->accelerer(45);
   $v1->freiner(20);
   $v1->getInfos();
   $v1elec->demarrer();*/
-  $v1elec->getInfos();
+ echo  $v1elec->getInfos();
+ // echo gettype($v1elec->getInfos()); gettyp
   
     ?>
     

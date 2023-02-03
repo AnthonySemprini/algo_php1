@@ -93,10 +93,17 @@ class Voiture {
     }
     public function getInfos()
     {
-        echo  "marque : " . $this->marque. "<br>".
-                "modele : " . $this->modele . "<br>".
-                " Nombre de portes : " . $this->nbPorte . "<br>".
-                "Sa vitesse actuelle est de : " . $this->vitesseActuel . " km/h<br>";
+        $result = "infos véhicule<br>".
+                  "**********************<br>". 
+
+                  "Nom et modéle du véhicule : " . $this->marque ." ".$this->modele . "<br>".
+
+                  "Le véhicule ".$this->marque." est " .$this->status."<br>".
+
+                 " Nombre de portes : " . $this->nbPorte . "<br>".
+
+                  "Sa vitesse actuelle est de : " .$this->vitesseActuel . " km/h<br>";
+        return $result;
     }
 
     // magic method toString, moyen d'afficher facilement une instance d'un objet
